@@ -1,3 +1,9 @@
+<%
+    if (session.getAttribute("login") != "OK") {
+        response.sendRedirect("login.jsp");
+    }
+%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
@@ -24,25 +30,27 @@
             </jsp:include>
 
             <br>
-            <a href="#" class="btn btn-primary btn-sm"><i class="fa-solid fa-circle-plus"></i>Nuevo</a>
+            <a href="VentaControlador?action=add" class="btn btn-primary btn-sm"><i class="fa-solid fa-circle-plus"></i>Nuevo</a>
 
             <table class="table table-striped">
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
-                    <th>Precio</th>
+                    <th>Nombre de Cliente</th>
+                    <th>Producto</th>
+                    <th>Fecha</th>
                     <th></th>
                     <th></th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Table</td>
-                    <td>sdf</td>
-                    <td>1500</td>
-                    <td><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
-                    <td><a href="#"><i class="fa-solid fa-trash"></i>Eliminar</a></td>
-                </tr>
+                <c:forEach var="item" items="${ventas}">
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.cliente}</td>
+                        <td>${item.producto}</td>
+                        <td>${item.fecha}</td>
+                        <td><a href="VentaControlador?action=edit&id=${item.id}"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
+                        <td><a href="VentaControlador?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro de eliminar???????'))"><i class="fa-solid fa-trash"></i>Eliminar</a></td>
+                    </tr>
+                </c:forEach>
 
             </table>
 

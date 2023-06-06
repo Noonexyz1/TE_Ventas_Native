@@ -98,13 +98,14 @@ public class ProductoDAOimpl extends ConexionDB implements ProductoDAO{
 
     @Override
     public List<Producto> getAll() throws Exception {
-        List<Producto> lista = new ArrayList<>();
+        List<Producto> lista = null;
         try {
             this.conectar();
             String sql = "select * from productos";
             PreparedStatement ps = this.connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
+            lista = new ArrayList<>();
             while (rs.next()) {
                 Producto prod = new Producto();
                 prod.setId(rs.getInt("id"));

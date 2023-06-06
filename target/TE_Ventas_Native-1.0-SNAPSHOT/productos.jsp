@@ -1,3 +1,8 @@
+<%
+    if (session.getAttribute("login") != "OK") {
+        response.sendRedirect("login.jsp");
+    }
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">

@@ -85,6 +85,7 @@ public class VentasDAOimpl extends ConexionDB implements VentasDAO{
                 venta.setProducto_id(rs.getInt("producto_id"));
                 venta.setCliente_id(rs.getInt("cliente_id"));
                 venta.setFecha(rs.getDate("fecha"));
+                
 
             }
 
@@ -102,7 +103,10 @@ public class VentasDAOimpl extends ConexionDB implements VentasDAO{
         List<Venta> lista = new ArrayList<>();
         try {
             this.conectar();
-            String sql = "select v.*, p.nombre as producto, c.nombre as cliente from ventas v left join productos p on v.producto_id = p.id left join clientes c on v.clientes_id = c.id";
+            //String sql = "select v.*, p.nombre as producto, c.nombre as cliente from ventas v left join productos p on v.producto_id = p.id left join clientes c on v.clientes_id = c.id";
+            String sql = "select v.*, p.nombre as producto, c.nombre as cliente from ventas v "
+                    + "left join productos p on v.producto_id = p.id "
+                    + "left join clientes c on v.cliente_id = c.id";
             PreparedStatement ps = this.connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 

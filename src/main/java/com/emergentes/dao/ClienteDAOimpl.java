@@ -98,13 +98,14 @@ public class ClienteDAOimpl extends ConexionDB implements ClienteDAO{
 
     @Override
     public List<Cliente> getAll() throws Exception {
-        List<Cliente> lista = new ArrayList<>();
+        List<Cliente> lista = null;
         try {
             this.conectar();
             String sql = "select * from clientes";
             PreparedStatement ps = this.connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
+            lista = new ArrayList<>();
             while (rs.next()) {
                 Cliente cli = new Cliente();
                 cli.setId(rs.getInt("id"));
