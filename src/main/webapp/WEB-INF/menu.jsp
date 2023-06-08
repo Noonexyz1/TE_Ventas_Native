@@ -14,5 +14,9 @@
     <li class="nav-item">
         <a class="nav-link <%= (opcion.equals("ventas")) ? "active" : ""%>" href="VentaControlador">Ventas</a>
     </li>
+    
+    <li class="nav-item">
+        <a class="nav-link <%= (opcion.equals("usuarios")) ? "active" : ""%>" href="UsuarioControlador">Usuarios</a>
+    </li>
 
 </ul>
