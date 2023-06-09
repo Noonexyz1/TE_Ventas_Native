@@ -4,7 +4,7 @@
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link <%= (opcion.equals("productos"))? "active":"" %>" href="productos.jsp">Productos</a>
+        <a class="nav-link <%= (opcion.equals("productos"))? "active":"" %>" href="ProductoControlador">Productos</a>
     </li>
 
     <li class="nav-item">

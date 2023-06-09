@@ -11,6 +11,7 @@
 /home/noone/Documentos/WORKSPACE_JAVA_WEB/TE_Ventas_Native/src/main/java/com/emergentes/modelo/Usuario.java
 /home/noone/Documentos/WORKSPACE_JAVA_WEB/TE_Ventas_Native/src/main/java/com/emergentes/utiles/ConexionDB.java
 /home/noone/Documentos/WORKSPACE_JAVA_WEB/TE_Ventas_Native/src/main/java/com/emergentes/dao/ClienteDAO.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/TE_Ventas_Native/src/main/java/com/emergentes/controlador/ProductoControlador.java
 /home/noone/Documentos/WORKSPACE_JAVA_WEB/TE_Ventas_Native/src/main/java/com/emergentes/dao/UsuarioDAO.java
 /home/noone/Documentos/WORKSPACE_JAVA_WEB/TE_Ventas_Native/src/main/java/com/emergentes/controlador/Logout.java
 /home/noone/Documentos/WORKSPACE_JAVA_WEB/TE_Ventas_Native/src/main/java/com/emergentes/dao/VentasDAO.java

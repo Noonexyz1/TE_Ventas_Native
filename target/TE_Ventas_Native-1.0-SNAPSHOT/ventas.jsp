@@ -28,7 +28,9 @@
             <jsp:include page="WEB-INF/menu.jsp">
                 <jsp:param name="opcion" value="ventas"/>
             </jsp:include>
-
+            
+            <a href="Logout" class="btn btn-danger">Cerrar Sesion</a>
+            
             <br>
             <a href="VentaControlador?action=add" class="btn btn-primary btn-sm"><i class="fa-solid fa-circle-plus"></i>Nuevo</a>
 

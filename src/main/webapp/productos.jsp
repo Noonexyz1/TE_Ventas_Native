@@ -3,6 +3,7 @@
         response.sendRedirect("login.jsp");
     }
 %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
@@ -27,27 +28,31 @@
             <jsp:include page="WEB-INF/menu.jsp">
                 <jsp:param name="opcion" value="productos"/>
             </jsp:include>
-
+            
+            <a href="Logout" class="btn btn-danger">Cerrar Sesion</a>
+            
             <br>
-            <a href="#" class="btn btn-primary btn-sm"><i class="fa-solid fa-circle-plus"></i>Nuevo</a>
+            <a href="ProductoControlador?action=add" class="btn btn-primary btn-sm"><i class="fa-solid fa-circle-plus"></i>Nuevo</a>
 
             <table class="table table-striped">
                 <tr>
                     <th>Id</th>
-                    <th>Nombre del Cliente</th>
-                    <th>Producto</th>
-                    <th>Fecha</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
                     <th></th>
                     <th></th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Bruno</td>
-                    <td>Note 25</td>
-                    <td>2021-05-11</td>
-                    <td><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
-                    <td><a href="#"><i class="fa-solid fa-trash"></i>Eliminar</a></td>
-                </tr>
+                <c:forEach var="item" items="${productos}">
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.nombre}</td>
+                        <td>${item.descripcion}</td>
+                        <td>${item.precio}</td>
+                        <td><a href="ProductoControlador?action=edit&id=${item.id}"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
+                        <td><a href="ProductoControlador?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro de eliminar???????'))"><i class="fa-solid fa-trash"></i>Eliminar</a></td>
+                    </tr>
+                </c:forEach>
 
             </table>
 
